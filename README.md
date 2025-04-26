@@ -90,4 +90,4 @@ node .\Backend\server.js
 
 ## 🤝 Contributing
 
-     If you'd like to contribute, feel free to open a pull request with any improvements or features you'd like to add.
+If you'd like to contribute, feel free to open a pull request with any improvements or features you'd like to add.
