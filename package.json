@@ -2,7 +2,7 @@
   "name": "dummy-data-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "Backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

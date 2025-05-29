@@ -30,26 +30,23 @@ let data = {
     isManager: [true, false]
 };
 
-// Routes
-// app.get("/", (req, res) => {
-//     res.send("Hello World");
-// });
+
 
 app.get("/", async (req, res) => {
     const collectionName = "dummydatas"
     try {
         let employees = [];
-        const collections = await mongoose.connection.db.listCollections({ name: collectionName }).toArray();
-        if (collections.length > 0) {
-            await mongoose.connection.db.dropCollection(collectionName);
-            res.send(`🗑️ Collection "${collectionName}" dropped.`);
-        } else {
-            console.log(`📂 Collection "${collectionName}" does not exist. Creating a new one.`);
+        // const collections = await mongoose.connection.db.listCollections({ name: collectionName }).toArray();
+        // if (collections.length > 0) {
+        //     await mongoose.connection.db.dropCollection(collectionName);
+        //     res.send(`🗑️ Collection "${collectionName}" dropped.`);
+        // } else {
+            // console.log(`📂 Collection "${collectionName}" does not exist. Creating a new one.`);
+            await dummyData.deleteMany({})
 
             for (let i = 0; i < 10; i++) {
                 let randomNum = Math.floor(Math.random() * 3); // 0 to 2
                 let randomManager = Math.floor(Math.random() * 2); // 0 or 1
-
                 let salary = Math.floor(Math.random() * 1000000);
 
                 const employeeData = {
@@ -64,9 +61,9 @@ app.get("/", async (req, res) => {
             }
 
             const inserted = await dummyData.insertMany(employees);
-            console.log("Inserted:", inserted);
+            // console.log("Inserted:", inserted);
             res.json(inserted);
-        }
+        // }
     } catch (error) {
         console.error("Insert error:", error);
         res.status(500).json({ error: "Failed to insert data" });
