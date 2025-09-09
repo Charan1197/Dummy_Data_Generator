@@ -1,23 +1,34 @@
 # Dummy Data Generator
 
-A simple Express app that fetches employee data from a MongoDB database and displays it on a webpage using a "Fetch Data" button.
+- A simple web application to generate random employee data using Node.js, Express.js, Mongoose, Faker.js, and MongoDB Atlas.
+
+- Whenever you click the Generate button, the backend:
+
+- Deletes existing data from the MongoDB collection.
+
+- Inserts 10 new randomly generated employee records.
+
+- The frontend is hosted on GitHub Pages and fetches data from the backend hosted on Render.
 
 ## 🚀 Features
 
-- Click a button to generate and display 10 random employee records
-- Displays name, salary, language, city, and manager status
-- If the collection already exists:
-  - The collection will be **dropped**
-- If the collection does not exist:
-  - It will be **created** and filled with **10 random employee records**
-- Supports both JSON and plain text responses from the backend
-- Clean separation of frontend and backend
+- One-click random employee data generation.
+
+- Automatic deletion of old data before inserting new.
+
+- Uses **Faker.js** for realistic dummy data.
+
+- Data stored in **MongoDB Atlas cloud cluster**.
+
+- Backend hosted on **Render**.
+
+- Frontend hosted on **GitHub Pages**.
 
 
 ## 📖 Usage
 
 1. Start the backend server (`node server.js`)
-2. Open `frontend/index.html` in a browser
+2. Open `docs/index.html` in a browser
 3. Click the "Fetch Data" button:
     - The backend will check for the existing collection
     - If it exists, it will **drop** the collection 
@@ -28,9 +39,19 @@ A simple Express app that fetches employee data from a MongoDB database and disp
 ![ss](image.png)
 
 ## 🛠 Tech Stack
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
-- Database: MongoDB (local)
+- Node.js
+
+- Express.js
+
+- Mongoose
+
+- Faker.js
+
+- MongoDB Atlas
+
+- Render (Backend hosting)
+
+- GitHub Pages (Frontend hosting)
 
 ## 📁 Project Structure
 ```bash
@@ -39,7 +60,7 @@ your-project/
 |   |-- model/
 |   |   |-- dataGenerator.js #js file to create a Mongoose Schema
 │   ├── server.js              # Main backend server file
-├── frontend/                # Frontend folder with client-side code
+├── docs/                # docs folder with client-side code
 │   ├── index.html           # Main HTML page
 │   ├── script.js            # Frontend JavaScript code (handles button click, fetch data)
 │   ├── style.css            # CSS file for styling the page
@@ -49,11 +70,22 @@ your-project/
 ├── README.md                # Project documentation
 ```
 
-## 📋 Requirements
+## 🔗 Live Links
+- Frontend (GitHub Pages): https://charan1197.github.io/Dummy_Data_Generator/
 
-- Node.js (v14 or higher recommended)
-- npm (Node Package Manager)
-- MongoDB installed locally and running on `mongodb://localhost:27017`
+- Backend (Render): https://dummy-data-generator-eqbt.onrender.com
+
+
+
+## ⚡How It Works
+
+- Open the frontend.
+
+- Click on the Generate button.
+
+- The backend deletes old data and inserts 10 new random employees.
+
+- The frontend fetches and displays the latest data.
 
 ## 📦 Dependencies
 
@@ -61,6 +93,7 @@ Backend dependencies (installed using `npm install`):
 - express
 - mongoose
 - dotenv
+- faker
 - cors
 
 Frontend:
@@ -83,13 +116,21 @@ npm install
 
 3. Create a .env file:
 ```bash
-MONGO_URI=mongodb://localhost:27017/testDB
+MONGO_URI=your_mongodb_connection_string
 ```
 
-4. Start the backend server:
+4. Start the  server:
 ```bash
-node .\Backend\server.js
+npm start
 ```
+
+5. Frontend Setup
+
+ - The frontend is plain HTML/JS and doesn’t need a build step.
+
+- Open docs/index.html in a browser (or use GitHub Pages link).
+
+- Make sure the backend URL inside your frontend code points to your local server (e.g., http://localhost:5000) or your Render-hosted backend.
 
 ## 🤝 Contributing
 
