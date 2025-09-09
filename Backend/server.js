@@ -9,7 +9,11 @@ dotenv.config();
 
 const app = express();
 const port = 3000;
-app.use(cors());
+
+
+app.use(cors({}));
+
+
 
 const mongoURI = process.env.MONGO_URI;
 
@@ -22,8 +26,9 @@ try {
   console.error("Connection error:", err);
 }
 
+mongoose.set("debug", true);
 
-app.get("/", async (req, res) => {
+app.get("/api", async (req, res) => {
     const collectionName = "dummydata"
     try {
         let employees = [];

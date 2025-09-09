@@ -1,6 +1,6 @@
 async function fetchData() {
     try {
-        const response = await fetch("http://localhost:3000/");
+        const response = await fetch("https://dummy-data-generator-eqbt.onrender.com/");
 
         const contentType = response.headers.get("content-type");
 
@@ -25,7 +25,7 @@ async function fetchData() {
                     <span>Salary: ${element.salary}</span><br>
                     <span>Language: ${element.language}</span><br>
                     <span>City: ${element.city}</span><br>
-                    <span>isManager: ${element.isManager}</span>
+                    <span>isManager: ${element.isManager}</span> 
                 `;
                 main.appendChild(displaydata);
             });
