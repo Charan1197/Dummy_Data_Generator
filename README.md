@@ -24,6 +24,8 @@ A simple Express app that fetches employee data from a MongoDB database and disp
     - If it doesn't exist, it will **create** the collection and insert the data of **10 random employee records**
 4. The data will then be displayed on the webpage in a clean format
 
+## Screenshot
+![ss](image.png)
 
 ## 🛠 Tech Stack
 - Frontend: HTML, CSS, JavaScript
@@ -63,6 +65,7 @@ Backend dependencies (installed using `npm install`):
 
 Frontend:
 - Plain HTML, CSS, and JavaScript (no external libraries required)
+
 
 
 ## 📦 Installation

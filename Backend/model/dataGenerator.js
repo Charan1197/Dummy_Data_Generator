@@ -3,9 +3,10 @@ import mongoose, { Schema } from "mongoose"
 const dataGenSchema = new Schema({
     name:String,
     salary:Number,
-    language:String,
+    Email:String,
     city:String,
+    language: String,
     isManager:Boolean
 })
 
-export const dummyData = mongoose.model("DummyData", dataGenSchema)
+export const DummyData = mongoose.model("DummyData", dataGenSchema)

@@ -11,7 +11,7 @@ async function fetchData() {
             data = await response.text();
         }
 
-        console.log("Data:", data);
+        // console.log("Data:", data);
 
         const main = document.querySelector(".content");
         main.innerHTML = ""; // Clear previous content if needed
@@ -43,7 +43,6 @@ async function fetchData() {
 
 }
 btn.addEventListener("click", () => {
-    console.log("clicked")
     fetchData()
 
 })
